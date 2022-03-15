@@ -3,12 +3,16 @@ import RecordBlock from "./RecordBlock";
 function Records({ records, addToBasket }) {
   return (
     <div className="container">
-      {records.map((record) => (
+      {records.map(({ title, images, classification, culture, dated, id }) => (
         <RecordBlock
-          key={record.id}
-          record={record}
+          key={id}
+          title={title}
+          images={images[0].baseimageurl}
+          classification={classification}
+          culture={culture}
+          dated={dated}
           addToBasket={addToBasket}
-          id={record.id}
+          id={id}
         />
       ))}
     </div>
