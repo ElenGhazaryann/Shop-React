@@ -10,7 +10,6 @@ function RecordBlock({
   addToBasket,
 }) {
   let [quantity, setQuantity] = useState(0);
-
   const addItem = () => {
     setQuantity((val) => val + 1);
     addToBasket({ title, id, quantity: quantity + 1 });
@@ -24,7 +23,7 @@ function RecordBlock({
   return (
     <div className="record">
       <h2>{title}</h2>
-      <img className="record-img" src={images[0].baseimageurl} />
+      <img className="record-img" src={images} />
       <p>Classification: {classification}</p>
       <p>Culture: {culture}</p>
       <p>Dated: {dated}</p>
